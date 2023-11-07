@@ -10,13 +10,8 @@ const PopularService = ({service}) => {
 
 			
 <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
-	{/* <div className="flex  items-center">
-		<img alt="" src={service.service_provider.image} className="object-cover w-14 h-14 rounded-full shadow dark:bg-gray-500" />
-		<div className="flex items-center justify-around  w-full ">
-			<p  className="font-bold">{service.service_provider.name}</p>
-			
-		</div>
-	</div> */}
+
+
 	<div>
 
 		<img src={service.service_image} alt=""className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
@@ -41,9 +36,8 @@ const PopularService = ({service}) => {
 			}
 		</p>
 				<Button className="" outline gradientDuoTone="redToYellow">
-			<Link className="  " to={`/service/${service._id}`}>
-     View Details
-	  </Link>
+			<Link className="" to={`/service/${service._id}`}>
+     View Details </Link>
       </Button>
 
 		
