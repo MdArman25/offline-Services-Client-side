@@ -1,0 +1,175 @@
+[
+      {
+        "service_name": "Plumbing",
+        "service_image": "https://i.ibb.co/BtXrksw/plumber-screwing-nut-pipe-heating-system-boiler-room-244784-1612.jpg",
+        "service_description": "Our plumbing services cover a wide range of needs, from fixing leaky faucets and clogged drains to complete pipe replacements. We provide professional and timely solutions for your plumbing problems. With years of experience, we're experts in diagnosing issues and providing effective repairs. Whether it's a minor repair or a major installation, we're equipped to handle it. Our team is dedicated to ensuring your plumbing system runs smoothly, preventing water damage and inconvenience. Don't let plumbing issues disrupt your daily life; contact us for reliable plumbing services.",
+        "user_name": "John's Plumbing Services",
+        "user_image": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=1470&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ,
+        "service_area": "Citywide",
+        "service_price": "$250"
+      },
+      {
+        "service_name": "Electrical",
+        "service_image": "https://i.ibb.co/rk268Yw/electricity-electrical-maintenance-service-engineer-hand-holding-ac-voltmeter-checking-electric-curr.jpg",
+        "service_description": "Our electrical services ensure the safety and efficiency of your electrical systems. From troubleshooting electrical problems to installing new fixtures, our certified electricians are ready to meet your needs. We understand the importance of reliable electricity in your home and offer swift and cost-effective solutions. Trust us for any electrical work, whether it's a simple repair or a complete rewiring project. Your safety and satisfaction are our top priorities.",
+        "user_name": "Bright Sparks Electricians",
+        "user_image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZWxlY3RyaWNhbCUyMGVuZ2luZWVyfGVufDB8fDB8fHww"
+        ,
+        "service_area": "Metropolitan Area",
+        "service_price": "$300"
+      },
+      {
+        "service_name": "House Cleaning",
+        "service_image": "https://i.ibb.co/M6tcVQw/professional-cleaning-service-team-cleans-living-room-modern-apartment-130111-3877.jpg",
+        "service_description": "Our house cleaning services promise a spotless and organized home. We offer comprehensive cleaning solutions, from routine cleaning to deep cleaning projects. Our professional cleaners pay attention to every detail and use eco-friendly products. Your satisfaction is our motivation, and we ensure your home is a clean and healthy environment for your family. Our team is dedicated to making your life easier by keeping your home clean and tidy.",
+        "user_name": "Sweep Cleaners",
+        "user_image": "https://plus.unsplash.com/premium_photo-1664908457766-61ce2636be21?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fEhvdXNlJTIwY2xlYW5lcnxlbnwwfHwwfHx8MA%3D%3D"
+        ,
+        "service_area": "Countywide",
+        "service_price": "$150"
+      },
+      {
+        "service_name": "Landscaping",
+        "service_image": "https://i.ibb.co/Mn6tjJS/farmer-gardener-168370-4.jpg",
+        "service_description": "Transform your outdoor space with our expert landscaping services. We specialize in designing and maintaining beautiful gardens and landscapes. Our team of skilled landscapers can handle everything from garden maintenance to hardscaping projects. We use sustainable practices and the latest techniques to ensure your landscape thrives throughout the year. Let us help you create the outdoor paradise you've always dreamed of.",
+        "user_name": "Green Thumb Landscapers",
+        "user_image": "https://images.unsplash.com/photo-1480429370139-e0132c086e2a?auto=format&fit=crop&q=80&w=1376&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ,
+        "service_area": "Regional",
+        "service_price": "$500"
+      },
+      {
+        "service_name": "Appliance Repair",
+        "service_image": "https://i.ibb.co/j3fMZw3/repair-dishwashers-master-has-come-home-is-repairing-dishwasher-493343-14394.jpg",
+        "service_description": "Appliance malfunctions can disrupt your daily routine. Our appliance repair services offer quick and reliable solutions to get your appliances back in working order. We have experienced technicians who can repair a wide range of appliances, including refrigerators, washing machines, and ovens. Our goal is to extend the lifespan of your appliances and save you the cost of replacements. Choose us for prompt and professional service.",
+        "user_name": "FixIt Appliance Repair",
+        "user_image": "https://images.unsplash.com/photo-1647316897340-6b6de5597c0f?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8QXBwbGlhbmNlJTIwcmVwYWlyZXxlbnwwfHwwfHx8MA%3D%3D"
+        ,
+        "service_area": "Citywide",
+        "service_price": "$200"
+      },
+      {
+        "service_name": "Painting",
+        "service_image": "https://i.ibb.co/PtmFDMD/master-painter-holds-his-hands-color-palette-with-shades-blue-151013-20435.jpg",
+        "service_description": "Our painting services aim to transform your living spaces with vibrant and long-lasting colors. We take pride in our meticulous approach to painting, ensuring a flawless finish on every project. Whether it's a single room or an entire house, our professional painters are skilled in both interior and exterior painting. We use high-quality materials and pay attention to detail to provide you with a fresh and beautiful look. Choose us for your painting needs and experience a renewed and appealing space.",
+        "user_name": "ColorSplash Painters",
+        "user_image": "https://images.unsplash.com/photo-1581803118522-7b72a50f7e9f?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1hbnxlbnwwfHwwfHx8MA%3D%3D"
+        ,
+        "service_area": "Countywide",
+        "service_price": "$800"
+      },
+      {
+        "service_name": "HVAC",
+        "service_image": "https://i.ibb.co/zs2ty19/male-technician-overalls-blue-cap-repairs-air-conditioner-wall-353017-466.jpg",
+        "service_description": "Heating, ventilation, and air conditioning (HVAC) systems are crucial for your comfort, and we offer comprehensive HVAC services to ensure your system runs efficiently. Our technicians are highly skilled in HVAC installation, repair, and maintenance. We address issues such as uneven heating or cooling, poor air quality, and system inefficiencies. Trust us for all your HVAC needs.",
+        "user_name": "Climate Control HVAC",
+        "user_image": "https://images.unsplash.com/photo-1590086782957-93c06ef21604?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG1hbnxlbnwwfHwwfHx8MA%3D%3D"
+        ,
+        "service_area": "Metropolitan Area",
+        "service_price": "$500"
+      },
+      {
+        "service_name": "Pest Control",
+        "service_image": "https://i.ibb.co/q957jzw/pest.jpg",
+        "service_description": "Pest infestations can be a major headache, and our pest control services are designed to rid your home of unwanted visitors. We use safe and effective pest control methods to eliminate pests while safeguarding your family and pets. Our team is well-versed in dealing with various pests, including insects, rodents, and more. Let us help you protect your home from the damage and health risks associated with pests.",
+        "user_name": "Critter Busters Pest Control",
+        "user_image": "https://images.unsplash.com/photo-1537511446984-935f663eb1f4?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29ya2VyfGVufDB8fDB8fHww"
+        ,
+        "service_area": "Citywide",
+        "service_price": "$200"
+      },
+      {
+        "service_name": "Roofing",
+        "service_image": "https://i.ibb.co/P4FPWfC/man-working-roof-long-shot-23-2148748781.jpg",
+        "service_description": "A sturdy roof is vital for protecting your home from the elements. Our roofing services encompass everything from roof repairs to full roof replacements. We provide high-quality roofing materials and expert craftsmanship to ensure the longevity and integrity of your roof. Trust us for reliable and durable roofing solutions.",
+        "user_name": "Roof Masters",
+        "user_image": "https://plus.unsplash.com/premium_photo-1682724908605-502aaa60cace?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fFJvb2ZpbmclMjB3b3JrZXJ8ZW58MHx8MHx8fDA%3D"
+        ,
+        "service_area": "Regional",
+        "service_price": "$1000"
+      },
+      {
+        "service_name": "Carpentry",
+        "service_image": "https://i.ibb.co/TgM9q9r/closeup-man-carpenter-using-nail-gun-carpenter-using-air-nail-gun-doing-wooden-furniture-work-vintag.jpg",
+        "service_description": "Carpentry is a skilled trade that can enhance the beauty and functionality of your home. Our carpentry services include custom woodworking, cabinet installation, and repair work. We're known for our attention to detail and precision in every project. We pride ourselves on turning your vision into reality with our carpentry expertise.",
+        "user_name": "Craftsmen Carpentry",
+        "user_image": "craftsmen.jpg"
+        ,
+        "service_area": "Citywide",
+        "service_price": "$400"
+      },
+      {
+        "service_name": "Home Renovation",
+        "service_image": "https://i.ibb.co/MkLK3NK/ren-ovation.jpg",
+        "service_description": "If you're looking to transform your home into the space of your dreams, our home renovation services are the solution. We offer comprehensive renovation and remodeling services, from kitchen makeovers to bathroom upgrades. Our team of experts handles every aspect of your renovation project, ensuring quality and satisfaction. Start your home transformation journey with us.",
+        "user_name": "Rebuild Homes",
+        "user_image": "https://plus.unsplash.com/premium_photo-1661762742902-11e0bbc0b863?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHdvcmtlcnxlbnwwfHwwfHx8MA%3D%3D"
+        ,
+        "service_area": "Metropolitan Area",
+        "service_price": "$5000"
+      },
+      {
+        "service_name": "Window Cleaning",
+        "service_image": "https://i.ibb.co/jZmfyZq/close-up-woman-s-hand-holding-bucket-with-cleaning-supplies-pink-napkin-23-2147916411.jpg",
+        "service_description": "Crystal-clear windows can enhance the beauty and ambiance of your home. Our window cleaning services guarantee streak-free and spotless windows. We use environmentally friendly cleaning products and the latest techniques to ensure your windows shine. Choose us for pristine and transparent windows.",
+        "user_name": "CrystalView Windows",
+        "user_image": "https://unsplash.com/photos/young-female-cleaner-spraying-detergent-on-window-and-rubbing-it-with-special-silicone-spatula-while-working-in-large-openspace-office-hX9EwHJMhfI"
+        ,
+        "service_area": "Citywide",
+        "service_price": "$200"
+      },
+      {
+        "service_name": "Carpet Cleaning",
+        "service_image": "https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fENhcnBldCUyMGNsZWFuaW5nfGVufDB8fDB8fHww",
+        "service_description": "Clean and fresh carpets can significantly improve the air quality and comfort of your home. Our carpet cleaning services provide thorough cleaning and stain removal for your carpets. We use proven methods and eco-friendly products to ensure your carpets look as good as new. Trust us for expert carpet cleaning.",
+        "user_name": "CleanRug Carpet Cleaners",
+        "user_image": "https://plus.unsplash.com/premium_photo-1683141366824-34b1e148f7bd?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fENhcnBldCUyMGNsZWFuaW5nfGVufDB8fDB8fHww"
+        ,
+        "service_area": "Countywide",
+        "service_price": "$250"
+      },
+      {
+        "service_name": "Home Security",
+        "service_image": "https://images.unsplash.com/photo-1523946460406-614d8a4ea8d8?auto=format&fit=crop&q=80&w=387&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "service_description": "Home security is paramount for your peace of mind, and our home security services offer comprehensive solutions to protect your home. We provide top-notch security system installation and monitoring services to safeguard your family and property. Choose us for state-of-the-art security and monitoring services.",
+        "user_name": "SafeGuard Security",
+        "user_image": "https://plus.unsplash.com/premium_photo-1683133939916-e59d8b80378d?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fEhvbWUlMjBzZWN1cml0eXxlbnwwfHwwfHx8MA%3D%3D"
+        ,
+        "service_area": "Metropolitan Area",
+        "service_price": "$1000"
+      },
+      {
+        "service_name": "Movers",
+        "service_image": "https://i.ibb.co/tqQBNxn/man-assembling-sofa-furniture-home-493343-29570.jpg",
+        "service_description": "Relocating to a new home or office can be a daunting task, but our moving services are designed to make the process smooth and stress-free. Our team of experienced movers provides reliable and efficient moving and packing services. We handle everything, from packing your belongings to safely transporting them to your new location. Trust us for a smooth and successful move.",
+        "user_name": "SmoothMove",
+        "user_image": "https://images.unsplash.com/photo-1631751018630-6b167865b308?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fE1vdmVyc3xlbnwwfHwwfHx8MA%3D%3D"
+        ,
+        "service_area": "Regional",
+        "service_price": "$800"
+      },
+    
+      {
+        "service_name": "Interior Design",
+        "service_image": "https://i.ibb.co/KyDW8Ks/antarior.jpg",
+        "service_description": "Interior design is the key to creating a beautiful and functional living space. Our interior design services focus on aesthetics, functionality, and your unique style. Our team of professional interior designers will work closely with you to bring your design vision to life. Choose us to create a stunning and personalized interior.",
+        "user_name": "DesignScape Interiors",
+        "user_image": "https://plus.unsplash.com/premium_photo-1661679796494-61408229a764?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGludGVyaW9yJTIwZGVzaWduZXJ8ZW58MHx8MHx8fDA%3D"
+        ,
+        "service_area": "Metropolitan Area",
+        "service_price": "$5000"
+      },
+    
+      {
+        "service_name": "Drywall Repair",
+        "service_image": "https://i.ibb.co/CVT8zxt/side-view-builder-man-measuring-23-2148751980.jpg",
+        "service_description": "Damaged drywall can affect the aesthetics and integrity of your home. Our drywall repair services offer professional solutions to restore the smoothness and appearance of your walls and ceilings. We handle everything from patching small holes to repairing large areas of damage. Trust us to make your walls look flawless once again.",
+        "user_name": "WallFix Drywall Repairs",
+        "user_image": "https://plus.unsplash.com/premium_photo-1663040339019-d46f6fa9b1ae?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZHJ5d2FsbCUyMHJlcGFpcnxlbnwwfHwwfHx8MA%3D%3D"
+        ,
+        "service_area": "Countywide",
+        "service_price": "$250"
+      }
+    ]
+  

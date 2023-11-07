@@ -5,7 +5,6 @@ const Root = () => {
     return (
         <div>
             <RootLayout>
-
      <Outlet></Outlet>
             </RootLayout>
         </div>

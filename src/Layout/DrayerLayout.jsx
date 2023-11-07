@@ -21,7 +21,7 @@ const RootLayout = ({ children }) => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <div className="menu p-4 w-80 min-h-full bg-base-200">
+        <div className="menu p-4 w-80 min-h-full bg-base-200 bg-opacity-60">
           {/* Sidebar content here */}
           <Sidebar />
         </div>
