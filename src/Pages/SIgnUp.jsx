@@ -1,4 +1,3 @@
-import { AwesomeButton } from "react-awesome-button";
 import { Link, useNavigate } from "react-router-dom";
 import SignUpAnemition from '../../public/SignUp.json';
 
@@ -7,6 +6,7 @@ import { useState } from "react";
 import { FaEyeSlash,FaEye } from 'react-icons/fa';
 import Context from "../Hooks/useContext";
 import Lottie from "lottie-react";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
     const [ShowPassword,setShowPassword]=useState(false)
@@ -18,7 +18,10 @@ const emailvalue = e.target.email.value;
 const namevalue = e.target.name.value;
 const passwordvalue = e.target.password.value;
 const photoUrlValue = e.target.photoUrl.value;
-
+// const UserProfile ={
+//     emailvalue,namevalue,passwordvalue,photoUrlValue
+// }
+// console.log();
 if (/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@#$%^&+=!])[A-Za-z\d@#$%^&+=!]{6,}$/.test(passwordvalue)) {
     console.log("Valid password:", passwordvalue);
     createUser(emailvalue, passwordvalue)
@@ -26,9 +29,11 @@ if (/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@#$%^&+=!])[A-Za-z\d@#$%^&+=!]{6,}$/.test(pass
           toast.success( result.user,'You Have SuccessFully Create Account')
           updeateProfile(emailvalue,namevalue,photoUrlValue)
           .then((results) => {
+
               console.log(result);
-            // console.log(results.user,'updateProfile successfully  ');
-            navigate('/')
+              toast.success('you have successfully login ')
+ // console.log(results.user,'updateProfile successfully  ');
+            // navigate('/')
           }).catch((error) => {
         
             console.log(error.message);
@@ -53,6 +58,9 @@ console.log(emailvalue,passwordvalue);
     
           <div className=" py-4 max-w-screen-xl md:flex border-2   justify-around md:ml-10">
                 
+          <Helmet>
+        <title> Service Swap || SIGN UP</title>
+      </Helmet>
                 <div className=" mt-10 shadow-xl border-2  w-full max-w-sm p-4 bg-white  border-gray-200 rounded-lg   sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 md:ml-52">
                     <form className="space-y-6" onSubmit={Handleregister}  >
                         <h5 className="text-xl font-medium text-gray-900 dark:text-white text-center">Create Our Website</h5>

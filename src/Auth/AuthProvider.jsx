@@ -12,6 +12,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import auth from "./Firebase.config";
+import axios from "axios";
 // import auth from './Firebase.config';
 // import auth from '../Firebase/Firebase';
 
@@ -53,9 +54,34 @@ return createUserWithEmailAndPassword(auth, email, password);
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (User) => {
-      setUser(User);
-      console.log(User);
+
+      const userEmail = User?.email || user?.email;
+      const loggedUser = { email: userEmail };
+     setUser(User);
+      console.log( 'Curent user',User);
       setLoading(false);
+
+// if(User){
+//   axios.post("")
+// }
+
+      // if user exists then issue a token
+      if (User) {
+          axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
+              .then(res => {
+                  console.log('token response', res.data);
+              })
+      }
+      else {
+          axios.post('http://localhost:5000/logout', loggedUser, {
+              withCredentials: true
+          })
+              .then(res => {
+                  console.log(res.data);
+              })
+      }
+
+      
     });
     return () => {
       unSubscribe();

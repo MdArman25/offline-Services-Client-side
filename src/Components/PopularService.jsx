@@ -17,9 +17,9 @@ const PopularService = ({service}) => {
 		<img src={service.service_image} alt=""className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
 		<h2 className="mb-2 text-2xl font-bold">{service.service_name}</h2>
 		{
-                   service.service_description.length > 200
-                        ? <p>{service.service_description.slice(0, 200)}...</p>
-                        : <p>{service.service_description}</p>
+                   service?.service_description?.length > 200
+                        ? <p>{service?.service_description?.slice(0, 200)}...</p>
+                        : <p>{service?.service_description}</p>
                 }
 	</div>
 	

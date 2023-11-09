@@ -52,7 +52,7 @@ const Sidebar = () => {
                 <li className="">Add Service</li>
               </NavLink>
               <NavLink
-                to="/my_service"
+                to="/manage_serviceser"
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"

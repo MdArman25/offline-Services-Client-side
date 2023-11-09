@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import LogingAn from "../../public/Login.json";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 
 import Lottie from "lottie-react";
 import { useState } from "react";
@@ -8,6 +8,7 @@ import Context from "../Hooks/useContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 const Login = () => {
   const [ShowPassword, setShowPassword] = useState(false);
   const location = useLocation();
@@ -34,7 +35,7 @@ const Login = () => {
       .then((result) => {
         console.log(result);
         navigate(location.state ? location.state : "/");
-        Swal.success("Login Successfully");
+        // Swal.success("Login Successfully");
       })
       .catch((error) => {
         // toast.error(error.message)
@@ -43,6 +44,9 @@ const Login = () => {
   };
   return (
     <div className=" md:flex  justify-around md:ml-10 ">
+      <Helmet>
+        <title> Service Swap || LOGING</title>
+      </Helmet>
       <div
         className=" flex-1  mx-auto w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-900 dark:text-gray-100 shadow-lg shadow-slate-400  my-10 
 	  "

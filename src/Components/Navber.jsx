@@ -28,7 +28,7 @@ const Navbar = () => {
         </label>
         <Link to={"/"} className="flex w-24 text-xl items-center font-bold ">
           <img className="" src={Logo} alt="" />
-          <p className="text-xl font-extrabold">ServiceSwap</p>
+          <p className="text-xl font-extrabold">Service Swap</p>
         </Link>
       </div>
       <div className="flex-none hidden  justify-end lg:block">
@@ -82,7 +82,7 @@ const Navbar = () => {
                 <li className="">Add Service</li>
               </NavLink>
               <NavLink
-                to="/my_service"
+                to="/manage_service"
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
@@ -90,7 +90,18 @@ const Navbar = () => {
                     ? "btn btn-warning btn-sm" : "btn btn-ghost btn-sm"
                 }
               >
-                <li className="">My Service</li>
+                <li className="">manage Service</li>
+              </NavLink>
+              <NavLink
+                to="/my_schedule"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "btn btn-warning btn-sm" : "btn btn-ghost btn-sm"
+                }
+              >
+                <li className="">MY Schedule</li>
               </NavLink>
             </ul>
           )}
@@ -99,7 +110,7 @@ const Navbar = () => {
               <div className="dropdown dropdown-end ">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
-                    <img src={user.photoURL} alt={user.display} />
+                    <img src={user.photoURL}  />
                   </div>
                 </label>
                 <ul
