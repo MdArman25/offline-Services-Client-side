@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { Link, NavLink } from "react-router-dom";
-import Logo from "../assets/serviceman-cartoon-design-vector-illustration_693697-34-removebg-preview.png";
+import Logo from "../assets/logo.png";
 import Context from "../Hooks/useContext";
 const Navbar = () => {
   const { user, logOut } = Context();
   return (
-    <div className=" w-full max-w-[1250px] px-[25px] mx-auto flex  justify-between">
-      <div className="flex items-center ">
+    <div className=" w-full max-w-[1250px]  mx-auto flex  justify-between">
+      <div className="flex items-center mr-10 ">
         <label
           htmlFor="my-drawer-3"
           aria-label="open sidebar"
@@ -31,7 +31,7 @@ const Navbar = () => {
           <p className="text-xl font-extrabold">Service Swap</p>
         </Link>
       </div>
-      <div className="flex-none hidden  justify-end lg:block">
+      <div className="flex-none hidden  justify-end lg:block  ml-10 pl-20">
         <div className="flex items-center gap-2">
           {/* Navbar menu content here */}
 
@@ -51,7 +51,7 @@ const Navbar = () => {
           >
             About
           </NavLink>
-          
+
           <NavLink
             to="/services"
             className={({ isActive }) =>
@@ -63,20 +63,21 @@ const Navbar = () => {
           {user?.email && (
             <ul className="md:flex gap-5 pr-20">
               <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              isActive ? "btn btn-warning btn-sm" : "btn btn-ghost btn-sm"
-            }
-          >
-            Contact
-          </NavLink>
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive ? "btn btn-warning btn-sm" : "btn btn-ghost btn-sm"
+                }
+              >
+                Contact
+              </NavLink>
               <NavLink
                 to="/add_service"
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
                     : isActive
-                    ? "btn btn-warning btn-sm" : "btn btn-ghost btn-sm"
+                    ? "btn btn-warning btn-sm"
+                    : "btn btn-ghost btn-sm"
                 }
               >
                 <li className="">Add Service</li>
@@ -87,7 +88,8 @@ const Navbar = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "btn btn-warning btn-sm" : "btn btn-ghost btn-sm"
+                    ? "btn btn-warning btn-sm"
+                    : "btn btn-ghost btn-sm"
                 }
               >
                 <li className="">manage Service</li>
@@ -98,19 +100,20 @@ const Navbar = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "btn btn-warning btn-sm" : "btn btn-ghost btn-sm"
+                    ? "btn btn-warning btn-sm"
+                    : "btn btn-ghost btn-sm"
                 }
               >
                 <li className="">MY Schedule</li>
               </NavLink>
             </ul>
           )}
-          <div className="navbar-end ">
+          <div className="navbar-end ml-10 ">
             {user?.email ? (
               <div className="dropdown dropdown-end ">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
-                    <img src={user.photoURL}  />
+                    <img src={user.photoURL} />
                   </div>
                 </label>
                 <ul
@@ -118,14 +121,16 @@ const Navbar = () => {
                   className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
                 >
                   <li>
-                    <button className="btn btn-sm  btn-ghost">
+                    <button className="btn btn-sm  mb-2 btn-ghost">
                       {user.displayName}
                     </button>
                   </li>
                   <li>
                     <NavLink
                       className={({ isActive }) =>
-                        isActive ? "btn btn-warning " : "btn btn-ghost "
+                        isActive
+                          ? "btn btn-warning  btn-sm"
+                          : "btn-sm btn btn-ghost "
                       }
                       onClick={logOut}
                     >

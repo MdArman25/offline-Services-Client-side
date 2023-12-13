@@ -2,83 +2,79 @@ import { useEffect, useState } from "react";
 import Context from "../Hooks/useContext";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
+import ServiceCard from "../Components/ServiceCard";
+import Swal from "sweetalert2";
 
 const ManageService = () => {
+  const { user } = Context();
+  const [Service, setService] = useState([]);
+  const handleDelete = (id) => {
+    //     axios.delete(`http://localhost:5000/Addservice/${id}`)
+    // const proceed = confirm('Are You sure you want to delete');
+    fetch(`http://localhost:5000/Addservice/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.deletedCount > 0) {
+          Swal.fire({
+            title: "Success!",
+            text: "service Updated Successfully",
+            icon: "success",
+            confirmButtonText: "OKh",
+          });
+          const remaining = Service.filter((service) => service._id !== id);
+          setService(remaining);
+        }
+      });
+  };
 
-    const { user } =Context()
-    const [Service, setService] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/myService?email=${user.email}`, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        setService(res.data);
+        console.log(res.data);
+      });
+    // fetch(url, { credentials: 'include' })
+    //     .then(res => res.json())
+    //     .then(data => setService(data))
+  }, [user.email]);
 
-    // const url = `/Service?email=${user?.email}`;
-    
-    useEffect(() => {
+  // useEffect(() => {
 
-        axios.get(`http://localhost:5000/myService?email=${user.email}`).then(res => {
-            setService(res.data)
-           console.log( res.data);
-        })
-        // fetch(url, { credentials: 'include' })
-        //     .then(res => res.json())
-        //     .then(data => setService(data))
+  //     axios.get(`http://localhost:5000/AddServices?email=${user.email}`,{withCredentials:true}).then(res => {
+  //         setService(res.data)
+  //        console.log( res.data);
+  //     })
+  //     // fetch(url, { credentials: 'include' })
+  //     //     .then(res => res.json())
+  //     //     .then(data => setService(data))
 
-     
-    }, []);
+  // }, [user.email]);
 
-    return (
-        <div>
-<Helmet>
+  return (
+    <div className="grid md:grid-cols-2 gap-10 lg:grid-cols-3 max-w-screen-xl mx-auto">
+      <Helmet>
         <title> Service Swap || MANAGE SERVICE</title>
       </Helmet>
-            {
-
-            }
-{/* <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-  
-    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-                
-                <th scope="col" className="px-6 py-3">
-                   Service Information
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Position
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Status
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Action
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-            
-                <th scope="row" className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                    <img className="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt=""/>
-                    <div className="pl-3">
-                        <div className="text-base font-semibold">Neil Sims</div>
-                        <div className="font-normal text-gray-500">neil.sims@flowbite.com</div>
-                    </div>  
-                </th>
-                <td className="px-6 py-4">
-                    React Developer
-                </td>
-                <td className="px-6 py-4">
-                    <div className="flex items-center">
-                        <div className="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div> Online
-                    </div>
-                </td>
-                <td className="px-6 py-4">
-                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
-                </td>
-            </tr>
-            
-        </tbody>
-    </table>
-</div> */}
-
-        </div>
-    );
+      {Service.length > 0 ? (
+        Service.map((ser) => (
+          <ServiceCard
+            key={ser._id}
+            service={ser}
+            handleDelete={handleDelete}
+          ></ServiceCard>
+        ))
+      ) : (
+        <p className="  text-center font-bold text-xl my-40 ">
+          No services available...{" "}
+        </p>
+      )}
+    </div>
+  );
 };
 export default ManageService;

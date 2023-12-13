@@ -1,7 +1,8 @@
-// import Client from "../Components/Client";
-// import OurTeam from "../Components/OurTeam";
+import Client from "../Components/Client";
+
 
 import { Helmet } from "react-helmet-async";
+import OurTeam from "../Components/OurTeam";
 
 
 const About = () => {
@@ -11,8 +12,9 @@ const About = () => {
         <title> Service Swap || ABOUT</title>
       </Helmet>
         <div>
-      {/* <OurTeam></OurTeam>
-<Client></Client> */}
+      <OurTeam></OurTeam>
+
+ <Client></Client> 
         </div>
         </div>
     );

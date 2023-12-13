@@ -9,7 +9,7 @@ const RootLayout = ({ children }) => {
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
         <div className="w-full navbar ">
-          <Navber/>
+          <Navber/>cd
         </div>
         {/* Page content here */}
         {children}

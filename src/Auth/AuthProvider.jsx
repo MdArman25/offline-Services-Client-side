@@ -11,10 +11,10 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import auth from "./Firebase.config";
+
 import axios from "axios";
-// import auth from './Firebase.config';
-// import auth from '../Firebase/Firebase';
+
+import auth from "./Firebase.config";
 
 export const AuthContext = createContext(null);
 
@@ -25,7 +25,7 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const createUser = (email, password) => {
     setLoading(true);
-return createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const signInUser = (email, password) => {
@@ -47,41 +47,40 @@ return createUserWithEmailAndPassword(auth, email, password);
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photoURL,
-      email:email
-
+      email: email,
     });
   };
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (User) => {
-
       const userEmail = User?.email || user?.email;
       const loggedUser = { email: userEmail };
-     setUser(User);
-      console.log( 'Curent user',User);
+      setUser(User);
+      console.log("Curent user", User);
       setLoading(false);
 
-// if(User){
-//   axios.post("")
-// }
+      // if(User){
+      //   axios.post("")
+      // }
 
       // if user exists then issue a token
       if (User) {
-          axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
-              .then(res => {
-                  console.log('token response', res.data);
-              })
-      }
-      else {
-          axios.post('http://localhost:5000/logout', loggedUser, {
-              withCredentials: true
+        axios
+          .post("http://localhost:5000/jwt", loggedUser, {
+            withCredentials: true,
           })
-              .then(res => {
-                  console.log(res.data);
-              })
+          .then((res) => {
+            console.log("token response", res.data);
+          });
+      } else {
+        axios
+          .post("http://localhost:5000/logout", loggedUser, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log(res.data);
+          });
       }
-
-      
     });
     return () => {
       unSubscribe();

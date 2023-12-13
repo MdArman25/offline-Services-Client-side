@@ -1,61 +1,173 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import Context from "../Hooks/useContext";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MySchedule = () => {
+  const [booking, setbooking] = useState([]);
+  const [panding, setpanding] = useState([]);
 
-    return (
-        <div>
-            <Helmet>
+  const { user } = Context();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/booking?email=${user.email}`, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        console.log(res.data);
+        setbooking(res.data);
+      });
+  }, [user.email]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/myService?email=${user.email}`, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        setpanding(res.data);
+        console.log(res.data);
+      });
+  }, [user.email]);
+  const handleDelete = (id) => {
+    //     axios.delete(`http://localhost:5000/Addservice/${id}`)
+    // const proceed = confirm('Are You sure you want to delete');
+    fetch(`http://localhost:5000/booking/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.deletedCount > 0) {
+          Swal.fire({
+            title: "Success!",
+            text: "service Updated Successfully",
+            icon: "success",
+            confirmButtonText: "OKh",
+          });
+          const remaining = booking.filter((service) => service._id !== id);
+          setbooking(remaining);
+        }
+      });
+  };
+
+  //     (bookingItem) => bookingItem.provide_email
+  //     === user?.email
+  //   );
+  // useEffect(()=>{
+  // // Filter bookings based on user's email
+
+  // //   setUserbooking(filteredBookings);
+  // }
+  // ,[user?.email])
+  // console.log(Userbooking);
+  return (
+    <div className=" max-w-screen-xl mx-auto my-10 w-full ">
+      <Helmet>
         <title> Service Swap || MY SCHEDULE</title>
       </Helmet>
-                       
-<div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-  
-    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-                
-                <th scope="col" className="px-6 py-3">
-                   Service Information
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Position
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Status
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Action
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-            
-                <th scope="row" className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                    <img className="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt=""/>
-                    <div className="pl-3">
-                        <div className="text-base font-semibold">Neil Sims</div>
-                        <div className="font-normal text-gray-500">neil.sims@flowbite.com</div>
-                    </div>  
-                </th>
-                <td className="px-6 py-4">
-                    React Developer
-                </td>
-                <td className="px-6 py-4">
-                    <div className="flex items-center">
-                        <div className="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div> Online
-                    </div>
-                </td>
-                <td className="px-6 py-4">
-                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
-                </td>
-            </tr>
-            
-        </tbody>
-    </table>
-</div>
-        </div>
-    );
+      <div className="shadow-xl shadow-slate-400 py-10 my-20 ">
+        <p className="text-center font-bold text-xl my-10">
+          My BOOKING SERVICE{" "}
+        </p>
+        {booking.length > 0 ? (
+          <table className="table-auto w-full">
+            <thead>
+              <tr>
+                <th className="px-4 py-2">Image</th>
+                <th className="px-4 py-2"> Service Name</th>
+                <th className="px-4 py-2">Provider Email</th>
+                <th className="px-4 py-2">service_price</th>
+                <th className="px-4 py-2">service_date</th>
+                <th className="px-4 py-2">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {booking.map((userData) => (
+                <tr className="text-center" key={userData.id}>
+                  <td className="border px-4 py-2">
+                    <img
+                      className="w-10 rounded-full h-10 "
+                      src={userData.service_image}
+                      alt=""
+                    />
+                  </td>
+                  <td className="border  px-4 py-2">{userData.service_name}</td>
+                  <td className="border px-4 py-2">{userData.provide_email}</td>
+                  <td className="border px-4 py-2">{userData.service_price}</td>
+                  <td className="border px-4 py-2">{userData.service_date}</td>
+                  <td className="border px-4 py-2">
+                    <Link onClick={() => handleDelete(userData._id)}>
+                      DELETE
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p className="text-center font-bold text-xl my-20">
+            No booking services available...
+          </p>
+        )}
+      </div>
+      <div
+        className="shadow-xl
+shadow-slate-400  py-10 my-20  "
+      >
+        <p className="text-center font-bold text-xl ">My PENDING SERVICE </p>
+
+        {panding.length > 0 ? (
+          <table className="table-auto w-full">
+            <thead>
+              <tr>
+                <th className="px-4 py-2">Image</th>
+                <th className="px-4 py-2"> Service Name</th>
+                <th className="px-4 py-2">Provider Email</th>
+                <th className="px-4 py-2">service_price</th>
+                <th className="px-4 py-2">service_date</th>
+                <th className="px-4 py-2">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {panding.map((userData) => (
+                <tr className="text-center" key={userData.id}>
+                  <td className="border px-4 py-2">
+                    <img
+                      className="w-10 rounded-full h-10 "
+                      src={userData.service_image}
+                      alt=""
+                    />
+                  </td>
+                  <td className="border  px-4 py-2">{userData.service_name}</td>
+                  <td className="border px-4 py-2">
+                    {userData.provider_email}
+                  </td>
+                  <td className="border px-4 py-2">{userData.service_price}</td>
+                  <td className="border px-4 py-2">{userData.service_date}</td>
+                  <td className="border px-4 py-2">
+                    <select className="select select-info w-full max-w-xs">
+                      <option selected>Pending</option>
+                      <option>In Progress</option>
+
+                      <option> Completed</option>
+                    </select>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p className="text-center font-bold text-xl my-20">
+            No pending services available...{" "}
+          </p>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default MySchedule;

@@ -31,9 +31,19 @@ if (/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@#$%^&+=!])[A-Za-z\d@#$%^&+=!]{6,}$/.test(pass
           .then((results) => {
 
               console.log(result);
-              toast.success('you have successfully login ')
- // console.log(results.user,'updateProfile successfully  ');
-            // navigate('/')
+              toast.success('🦄 Wow so easy!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                });
+
+ console.log(results.user,'updateProfile successfully  ');
+            navigate('/')
           }).catch((error) => {
         
             console.log(error.message);
@@ -72,15 +82,15 @@ console.log(emailvalue,passwordvalue);
                             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
                             <input   type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required />
                         </div>
-                        <div>
-                            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your PhotoUrl</label>
-                            <input   type="url" name="PhotoUrl" id="photoUrl" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder=" PhotoUrl" required />
-                        </div>
+                          <div>
+                              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your PhotoUrl</label>
+                              <input   type="url" name="PhotoUrl" id="photoUrl" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder=" PhotoUrl" required />
+                          </div>
                         <div>
            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
                     <input type={ShowPassword ? 'text' : 'password'}
          name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
-              <span className="relative text-xl  -top-8 left-60"    onClick={() => setShowPassword(!ShowPassword)} >
+              <span className="relative text-xl  -top-8 left-60 md:left-72"    onClick={() => setShowPassword(!ShowPassword)} >
                        
                        {
                     ShowPassword ? <FaEye></FaEye>

@@ -46,13 +46,13 @@ const Sidebar = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "btn btn-warning btn-sm" : "btn btn-ghost btn-sm btn-sm"
+                    ? "btn btn-warning btn-sm" : "btn btn-ghost btn-sm"
                 }
               >
                 <li className="">Add Service</li>
               </NavLink>
               <NavLink
-                to="/manage_serviceser"
+                to="/manage_service"
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
@@ -61,6 +61,17 @@ const Sidebar = () => {
                 }
               >
                 <li className="">My Service</li>
+              </NavLink>
+              <NavLink
+                to="/my_schedule"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "btn btn-warning btn-sm" : "btn btn-ghost btn-sm"
+                }
+              >
+                <li className="">MY Schedule</li>
               </NavLink>
             </ul>
           )}

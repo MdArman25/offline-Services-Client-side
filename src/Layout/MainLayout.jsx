@@ -14,6 +14,7 @@ import PrivateRoute from "./PrivateRoute";
 import ManageService from "../Pages/MyService";
 import AddService from "../Pages/AddService";
 import MySchedule from "../Pages/MySchedule";
+import UpdateProduct from "../Components/Update";
 
 const Router = createBrowserRouter([
   {
@@ -43,7 +44,11 @@ const Router = createBrowserRouter([
       },
       {
         path: "About",
-        element: <About></About>,
+        element: (
+          <PrivateRoute>
+            <About></About>
+          </PrivateRoute>
+        ),
       },
       {
         path: "services",
@@ -58,14 +63,18 @@ const Router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) => {
-          return fetch(`http://localhost:5000/services/${params.id}`);
+          return fetch(
+            `http://localhost:5000/services/${params.id}`
+          );
         },
       },
       {
         path: "add_service",
-        element: <PrivateRoute>
-       <AddService></AddService>
-      </PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <AddService></AddService>
+          </PrivateRoute>
+        ),
       },
       {
         path: "my_schedule",
@@ -82,6 +91,18 @@ const Router = createBrowserRouter([
             <ManageService></ManageService>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "UpdateProduct/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateProduct></UpdateProduct>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/services/${params.id}`
+          ),
       },
     ],
   },

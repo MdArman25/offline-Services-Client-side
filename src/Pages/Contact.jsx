@@ -5,16 +5,16 @@ import GoogleMap from "../Components/GoogleMap";
 
 const Contact = () => {
     return (
-        <div>
+        <div className="max-w-screen-xl mx-auto">
             <Helmet>
         <title> Service Swap || ABOUT</title>
       </Helmet>
         
-            {/* <ContactFrom></ContactFrom>
+            <ContactFrom></ContactFrom>
             <div className='w-full'>
-    <GoogleMap></GoogleMap> */}
+    <GoogleMap></GoogleMap>
 </div>
-        // </div>
+ </div>
     );
 };
 

@@ -1,5 +1,6 @@
 import {BsTelephonePlus} from 'react-icons/bs';
 import {VscGithub} from 'react-icons/vsc';
+// import moduleName from 'react-icons/vsc';
 import {CgMail} from 'react-icons/cg';
 import {CiFacebook,CiInstagram,CiTwitter} from 'react-icons/ci';
 

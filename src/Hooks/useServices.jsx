@@ -1,8 +1,6 @@
 // import { useEffect, useState } from "react";
 // import { axiosSecure } from "./useAxiosSecure";
 
-
-
 // const useServices = (search) => {
 //     console.log(search);
 //     const [services, setServices] = useState([]);

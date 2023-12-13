@@ -1,5 +1,3 @@
-
-
 import { useEffect, useState } from "react";
 import axios from "axios";
 import PopularService from "../Components/PopularService";
@@ -7,40 +5,45 @@ import { Helmet } from "react-helmet-async";
 
 const Services = () => {
   const [services, setServices] = useState([]);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
-
-    axios.get("http://localhost:5000/services").then((res) => {
-      const data = res.data;
-      setServices(data);
-    });
+    axios
+      .get("https://service-sharing-application-server.vercel.app/services")
+      .then((res) => {
+        const data = res.data;
+        setServices(data);
+      });
   }, []);
 
   useEffect(() => {
-
-    if (search) {
-      axios.get(`http://localhost:5000/services?search=${search}`).then((res) => {
-        const data = res.data;
-        console.log(data);
-        setServices(data);
-      });
+    if (search.length) {
+      axios
+        .get(
+          `https://service-sharing-application-server.vercel.app/services?search=${search}`
+        )
+        .then((res) => {
+          const data = res.data;
+          console.log(data);
+          setServices(data);
+        });
     }
   }, [search]);
   console.log(search);
 
-
-
   const handleSearch = (e) => {
     e.preventDefault();
     const searchText = e.target.search.value;
-    setSearch(searchText);
-    // axios.get(`http://localhost:5000/services?search=${search}`).then((res) => {
+    if (searchText.length) {
+      setSearch(searchText);
+      console.log(searchText);
+    }
+    // axios.get(`https://service-sharing-application-server.vercel.app/services?search=${search}`).then((res) => {
     //     const data = res.data;
     //     console.log(data);
     //     setServices(data);
     //   });
-  }
+  };
 
   return (
     <div className="max-w-screen-xl">
@@ -48,7 +51,10 @@ const Services = () => {
         <title> Service Swap || SERVICE</title>
       </Helmet>
       <div className="items-center flex justify-center pb-4 bg-white dark:bg-gray-900">
-        <form className="flex gap-4 items-center w-full justify-center" onSubmit={handleSearch}>
+        <form
+          className="flex gap-4 items-center w-full justify-center"
+          onSubmit={handleSearch}
+        >
           <div className="relative w-1/2">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg
@@ -72,8 +78,12 @@ const Services = () => {
               placeholder="Search for services"
             />
           </div>
-          <div className="border-2">
-            <input type="submit" value="Search" className="btn btn-outline btn-warning btn-md" />
+          <div className="">
+            <input
+              type="submit"
+              value="Search"
+              className="btn btn-outline btn-warning btn-md"
+            />
           </div>
         </form>
       </div>

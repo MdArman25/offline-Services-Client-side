@@ -4,8 +4,9 @@ import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Context from "../Hooks/useContext";
 import axios from "axios";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import { FaEye } from "react-icons/fa";
 
 const ServiceDetails = () => {
   const { user } = Context();
@@ -17,18 +18,20 @@ const ServiceDetails = () => {
     const form = e.target;
 
     const service_name = serviceData?.service_name;
-    const service_image = serviceData?.service_image
-    const service_price = serviceData?.service_price
+    const service_image = serviceData?.service_image;
+    const service_price = serviceData?.service_price;
+    const provide_email = serviceData?.provider_email;
+    const user_email = user.email;
     const service_date = form.takingDate.value;
     const instruction = form.instruction.value;
-    // const instruction = form.instruction.value;
-    // const area = form.area.value;
     console.log(
       service_name,
       service_image,
       service_price,
       service_date,
-      instruction
+      instruction,
+      provide_email,
+      user_email
     );
     const addBooking = {
       service_name,
@@ -36,19 +39,19 @@ const ServiceDetails = () => {
       service_price,
       service_date,
       instruction,
+      provide_email,
+      user_email,
     };
-    axios
-      .post("http://localhost:5000/AddBooking", addBooking)
-      .then((res) => {
-        if(res.data?.acknowledged){
-          Swal.fire({
-                        title: "Success!",
-                        text: "Product Added Successfully",
-                        icon: "success",
-                        confirmButtonText: "Done",
-                      });
-        }
-      });
+    axios.post("http://localhost:5000/AddBooking", addBooking).then((res) => {
+      if (res.data?.acknowledged) {
+        Swal.fire({
+          title: "Success!",
+          text: "Product Added Successfully",
+          icon: "success",
+          confirmButtonText: "Done",
+        });
+      }
+    });
   };
 
   // const handlesumbite =(e)=>{
@@ -185,12 +188,16 @@ const ServiceDetails = () => {
             </span>
 
             <p>{serviceData?.service_description}</p>
+           <p className="mt-20 text-xl font-bold flex gap-2"> <span className="pr-2">Viwer:</span>{serviceData?.clickCount} <span className="pl-2 mt-1"><FaEye/></span></p>
           </div>
         </div>
       </div>
 
       <div className="flex justify-between items-center gap-10">
-        <Link to={"http://localhost:5173/service"} className="btn mr-10 btn-outline btn-warning text-white">
+        <Link
+          to={"http://localhost:5173"}
+          className="btn mr-10 btn-outline btn-warning text-white"
+        >
           {/* <TbArrowBackUpDouble></TbArrowBackUpDouble> */}
           GO BACK
         </Link>
@@ -336,4 +343,3 @@ const ServiceDetails = () => {
   );
 };
 export default ServiceDetails;
-

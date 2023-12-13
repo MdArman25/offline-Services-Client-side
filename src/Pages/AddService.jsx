@@ -1,7 +1,7 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import Context from "../Hooks/useContext";
 import axios from "axios";
-import { useEffect } from "react";
+
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 
@@ -9,6 +9,9 @@ const AddService = () => {
   // const axios = require('axios');
   const { user } = Context();
   const provider_email = user.email;
+  const provider_name = user.displayName;
+  const provider_image = user.photoURL;
+  console.log(provider_image);
   const handleAddProduct = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -27,21 +30,24 @@ const AddService = () => {
       provider_email,
       service_description: Description,
       service_area: area,
+      provider_name,
+      provider_image,
     };
     console.log(NewProduct);
     axios
-      .post("http://localhost:5000/services", NewProduct)
+      .post("http://localhost:5000/services", NewProduct, {
+        withCredentials: true,
+      })
       .then((res) => {
-		if(res.data.insertedId){
-
-			Swal.fire({
-							title: "Success!",
-							text: "SerVice Added Successfully",
-							icon: "success",
-							confirmButtonText: "Done",
-						  })
-		}
-	  });
+        if (res.data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "SerVice Added Successfully",
+            icon: "success",
+            confirmButtonText: "Done",
+          });
+        }
+      });
     // useEffect(()=>{
     // fetch('http://localhost:5000/services',{
     // 	method :'POST',
@@ -148,7 +154,7 @@ const AddService = () => {
                 <label className="text-sm">Your Email</label>
                 <input
                   type="email"
-				  defaultValue={user?.email}
+                  defaultValue={user?.email}
                   placeholder="user EMail"
                   className="w-full rounded-md  focus:ri focus:ri dark:border-gray-700 text-lg font-medium dark:text-gray-900"
                 />
@@ -177,4 +183,3 @@ const AddService = () => {
 };
 
 export default AddService;
-
